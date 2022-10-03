@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <script type="text/javascript" src="./chat_js/custom_alert.js"></script>
+        <script type="text/javascript" src="./chat_js/setup.js"></script>
+        <script type="text/javascript" src="./chat_js/chat_window.js"></script>
+        <script type="text/javascript" src="./chat_js/search_friends.js"></script>
+        <script type="text/javascript" src="./chat_js/chat.js"></script>
+        <link rel="stylesheet" href="./chat_css/chat.css"/>
+        <link rel="stylesheet" href="./chat_css/fonts.css"/>
+    </head>
+    <body onload="displayProfilePicture()">
+        <div id="main">
+            <div id="chat_container">
+                <div id="chat_room">
+                    <div id="chat_head">
+                        <h1 id="currently_chatting"></h1>
+                        <h1 id="chat_description"></h1>
+                    </div>
+                    <div ondrop="sendPreparedFile(event)" ondragover="prepareForDrag(event)" id="chat_display">
+                        
+                    </div>
+                    <div id="chat_">
+                        <div>
+                            <input onchange="sendFile(event)" type="file" id="filechooser">
+                            <input onkeydown="chatMessage(event)" type="text" name="" id="text" placeholder="Type Message" value="">
+                            <button onclick="createChatBubble()">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="chat_data">
+                    <div id="side_nav">
+                        <div id="user_profile">
+                            <img id="profile_pic"/>
+                            <div class="online_border">
+                                <div class="online_background"></div>
+                            </div>
+                        </div>
+                        <div id="side">
+                            <div onclick="closeSettings()" class="navigation">
+                                <h1>Home</h1>
+                            </div>
+                            <div onclick="openSettings()" class="navigation">
+                                <h1>Settings</h1>
+                            </div>
+                            <div onclick="logOut()" id="sign_out">
+                                <h1>Logout</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="friends_list">
+                        <input id="search" onclick="displaySearch()" onkeyup="searchForFriends(event)" type="text" placeholder="Search">
+                        <div id="friends">
+                            <div id="search_friends">
+                                <button id="search_cancel" onclick="stopSearch()">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="setting">
+                <div id="settings_container">
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html
